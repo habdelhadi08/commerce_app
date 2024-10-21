@@ -45,6 +45,7 @@ function NavBar() {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success">Cart</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

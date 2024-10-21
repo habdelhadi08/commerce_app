@@ -3,6 +3,8 @@ function Women(){
 
     return(
         <>
+        <div className="card">
+        </div>
         </>
        
     )

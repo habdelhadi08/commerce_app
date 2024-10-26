@@ -4,13 +4,16 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
-function NavBar() {
+function NavBar({cartCount}) {
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#" style={{ color: "red", fontSize: "x-large" }}>
+        <Navbar.Brand href="#" style={{ color: "red", fontSize: "xx-large" }}>
           Fashionista Shop
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -20,21 +23,18 @@ function NavBar() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link
-              href="#action1"
-              style={{ color: "red", fontSize: "x-large" }}
-            >
+            <Link to="/" style={{ textDecoration: "none", color: "red", fontSize: "xx-large" }}>
               Home
-            </Nav.Link>
+            </Link>
 
             <NavDropdown
               id="navbarScrollingDropdown"
               style={{ fontSize: "x-large" }}
             >
-              <NavDropdown.Item href="#action3">Women</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Men</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">Kids</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/Women">Women</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Men">Men</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item as={Link} to="/Kids">Kids</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form className="d-flex">
@@ -45,7 +45,8 @@ function NavBar() {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-            <Button variant="outline-success">Cart</Button>
+            
+            <Button variant="outline-success" className="w-50">Cart {cartCount}</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

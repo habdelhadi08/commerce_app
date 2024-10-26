@@ -21,3 +21,8 @@
     height: auto;
     border-radius: 8px;
   }
+  .cart-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }

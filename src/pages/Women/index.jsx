@@ -1,19 +1,10 @@
 import "../Women/Women.css";
 import womenClothingData from "../../Data/womenClothingData";
-import { useState } from "react";
 
-function Women() {
-    const [cartCount, setCartCount] = useState(0); // Track the number of items in the cart
-
-    const addToCart = () => {
-      setCartCount(cartCount + 1); // Increment the cart count
-    };
-      
-       
-      
+function Women({ onAddToCart }) {
   return (
     <div>
-      <h2>Women`s Clothes</h2>
+      <h3>Women’s Clothes</h3>
       <div className="product-list">
         {womenClothingData.map((data, index) => (
           <div key={index} className="product-card">
@@ -26,12 +17,10 @@ function Women() {
             <p><strong>Description:</strong> {data.description}</p>
             <p><strong>Price:</strong> ${data.price.toFixed(2)}</p>
             <p><strong>Category:</strong> {data.category}</p>
-            <button onClick={addToCart}>Add to Cart</button>
+            <button onClick={onAddToCart}>Add to Cart</button> {/* Call parent function */}
           </div>
         ))}
       </div>
-
-      
     </div>
   );
 }

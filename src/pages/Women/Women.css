@@ -1,11 +1,23 @@
-.card{
-    width: 340px;
-    height: 175px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #2f4f4f;
-    color: white;
+.product-list {
+    display: flex;
+    flex-wrap: wrap; /* Ensures images wrap to the next line if they don’t fit */
+    gap: 16px; /* Adds space between product cards */
+    justify-content: center; /* Centers the content horizontally */
+    padding: 16px;
+  }
+  
+  .product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 200px;
     text-align: center;
-    align-content: center;
-    font-size: 35px;
-}
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-image {
+    width: 100%; /* Makes the image responsive within the card */
+    height: auto;
+    border-radius: 8px;
+  }

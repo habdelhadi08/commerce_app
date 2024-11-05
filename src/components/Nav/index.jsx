@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
 
 function NavBar() {
   return (
@@ -20,21 +20,22 @@ function NavBar() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link
-              href="#action1"
-              style={{ color: "red", fontSize: "x-large" }}
-            >
+            <Nav.Link href="#home" style={{ color: "red", fontSize: "x-large" }}>
               Home
             </Nav.Link>
 
-            <NavDropdown
-              id="navbarScrollingDropdown"
-              style={{ fontSize: "x-large" }}
-            >
-              <NavDropdown.Item href="#action3">Women</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Men</NavDropdown.Item>
+            <NavDropdown id="navbarScrollingDropdown" style={{ fontSize: "x-large" }}>
+              {/* Navigate to Women’s page */}
+              <NavDropdown.Item as={Link} to="/women">
+                Women
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/Men">
+                Men
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">Kids</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/kids">
+                Kids
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form className="d-flex">

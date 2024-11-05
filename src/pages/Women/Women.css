@@ -1,11 +1,26 @@
-.card{
-    width: 340px;
-    height: 175px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #2f4f4f;
-    color: white;
-    text-align: center;
-    align-content: center;
-    font-size: 35px;
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Space items evenly */
+}
+
+.product-card {
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Space inside the card */
+    margin: 10px; /* Space outside the card */
+    width: calc(33.333% - 20px); /* Three items per row with some space */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.product-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
 }
